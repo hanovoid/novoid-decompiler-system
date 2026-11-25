@@ -1,0 +1,41 @@
+{
+  "name": "novoid-decompiler-system",
+  "version": "1.0.0",
+  "description": "Systematic reverse-engineering rules and AI agent skills for multi-layer obfuscators and custom VMs.",
+  "main": "bin/install.js",
+  "bin": {
+    "novoid-decompiler-system": "./bin/install.js",
+    "novoid-skills": "./bin/install.js"
+  },
+  "files": [
+    "skills",
+    "rules",
+    "bin",
+    "AGENTS.md",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node bin/install.js",
+    "install-skills": "node bin/install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanovoid/novoid-decompiler-system.git"
+  },
+  "keywords": [
+    "reverse-engineering",
+    "decompiler",
+    "ai-agents",
+    "opencode",
+    "claude-code",
+    "codex",
+    "skills",
+    "obfuscation"
+  ],
+  "author": "hanovoid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hanovoid/novoid-decompiler-system/issues"
+  },
+  "homepage": "https://github.com/hanovoid/novoid-decompiler-system#readme"
+}

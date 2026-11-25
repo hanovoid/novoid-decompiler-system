@@ -4,6 +4,7 @@
 
 **Hệ thống Quy tắc, Tư duy Dịch ngược Hệ thống và Bộ Skill AI chuyên dụng để phân tích mã làm rối đa tầng, Custom VM và bytecode Python phức tạp.**
 
+[![npm version](https://img.shields.io/npm/v/novoid-decompiler-system.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/novoid-decompiler-system)
 [![Skills](https://img.shields.io/badge/AI_Skills-3_Modules-6366F1?style=for-the-badge&logo=openai&logoColor=white)](skills/)
 [![Rules](https://img.shields.io/badge/Core_Rules-Mindset_%26_Safety-10B981?style=for-the-badge&logo=shield&logoColor=white)](rules/)
 [![Compatible](https://img.shields.io/badge/Agent_Ready-OpenCode_%7C_Claude_%7C_Codex-0EA5E9?style=for-the-badge&logo=terminal&logoColor=white)](AGENTS.md)
@@ -34,6 +35,9 @@ flowchart LR
 
 ```text
 novoid-decompiler-system/
+├── bin/
+│   └── install.js                             # CLI installer (chạy qua npx novoid-decompiler-system)
+├── package.json                               # Cấu hình npm package & executable entrypoint
 ├── AGENTS.md                                  # Điểm vào & bảng định tuyến quy tắc/skill cho AI Agent
 ├── README.md                                  # Tài liệu tổng quan hệ thống
 ├── LICENSE                                    # Giấy phép MIT
@@ -76,12 +80,28 @@ novoid-decompiler-system/
 
 ## 🚀 Cài đặt & Tích hợp vào AI Agent
 
+### Cách 1: Dùng `npx` (Khuyên dùng — nhanh nhất)
+
+Chạy trực tiếp trong thư mục dự án / workspace của bạn:
+```bash
+# Cài đặt ngay vào workspace hiện tại (.agents/skills/):
+npx novoid-decompiler-system
+
+# Hoặc cài đặt toàn cục cho mọi workspace (~/.agents/skills/):
+npx novoid-decompiler-system -g
+
+# Cài đặt kèm toàn bộ thư mục rules/ vào workspace:
+npx novoid-decompiler-system --rules
+```
+
+### Cách 2: Cài đặt thủ công qua Git
+
 1. **Clone repository:**
    ```bash
    git clone https://github.com/hanovoid/novoid-decompiler-system.git
    ```
 
-2. **Tích hợp vào Project (khuyên dùng cho OpenCode / Codex / Claude Code):**
+2. **Tích hợp vào Project (OpenCode / Codex / Claude Code):**
    Copy thư mục `skills/*` vào `.agents/skills/` và tham chiếu `rules/` trong `AGENTS.md` của workspace:
    ```bash
    mkdir -p .agents/skills
