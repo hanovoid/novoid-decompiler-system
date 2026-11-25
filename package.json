@@ -1,6 +1,6 @@
 {
   "name": "novoid-decompiler-system",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Systematic reverse-engineering rules and AI agent skills for multi-layer obfuscators and custom VMs.",
   "main": "bin/install.js",
   "bin": {

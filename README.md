@@ -5,7 +5,7 @@
 **Hệ thống Quy tắc, Tư duy Dịch ngược Hệ thống và Bộ Skill AI chuyên dụng để phân tích mã làm rối đa tầng, Custom VM và bytecode Python phức tạp.**
 
 [![npm version](https://img.shields.io/npm/v/novoid-decompiler-system.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/novoid-decompiler-system)
-[![Skills](https://img.shields.io/badge/AI_Skills-3_Modules-6366F1?style=for-the-badge&logo=openai&logoColor=white)](skills/)
+[![Skill](https://img.shields.io/badge/AI_Skill-Unified_System-6366F1?style=for-the-badge&logo=openai&logoColor=white)](skills/)
 [![Rules](https://img.shields.io/badge/Core_Rules-Mindset_%26_Safety-10B981?style=for-the-badge&logo=shield&logoColor=white)](rules/)
 [![Compatible](https://img.shields.io/badge/Agent_Ready-OpenCode_%7C_Claude_%7C_Codex-0EA5E9?style=for-the-badge&logo=terminal&logoColor=white)](AGENTS.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
@@ -19,9 +19,7 @@
 ```mermaid
 flowchart LR
     Agent["🤖 AI Coding Agent<br/>(OpenCode / Claude Code / Codex)"] -->|"Nạp quy tắc gốc"| Rules["📜 AGENTS.md & rules/<br/>Tư duy White-Box • An toàn tĩnh"]
-    Agent -->|"1. Định tuyến tổng"| S1["🧠 systematic-reverse-engineering<br/>Chokepoint • Weakest Link • Vòng lặp kiểm chứng"]
-    S1 -->|"2. Bóc tách đa tầng"| S2["🔓 static-unpacking-pipeline<br/>AST Tĩnh • Vét LCG C • Crypto/AEAD"]
-    S1 -->|"3. Dựng lại mã nguồn"| S3["⚙️ bytecode-and-vm-recovery<br/>Marshal 3.11-3.14 • CodeType Emulation • CFF"]
+    Agent -->|"Kích hoạt Skill hợp nhất"| S1["⚡ novoid-decompiler-system<br/>Stage 1: Chokepoint & Invariants<br/>Stage 2: Static Layer Unpacker<br/>Stage 3: Bytecode, VM & CFF Recovery"]
     S1 -.->|"Tra cứu khi cần"| Ref["📚 reference/invariants.md<br/>Magic Bytes • PRNG • Bytecode ABI"]
 ```
 
@@ -46,19 +44,15 @@ novoid-decompiler-system/
 │   ├── mindset.md                             # 6 trụ cột tư duy dịch ngược hệ thống
 │   └── safety-and-boundaries.md               # Quy tắc an toàn thực thi tĩnh & chống bịa đặt mã nguồn
 └── skills/
-    ├── systematic-reverse-engineering/        # Skill điều phối tổng quy trình dịch ngược hệ thống
-    │   ├── SKILL.md
-    │   └── reference/
-    │       └── invariants.md                  # Bảng tra magic bytes, hằng số PRNG/hash, CPython ABI
-    ├── static-unpacking-pipeline/             # Skill bóc tách lớp mã hóa tĩnh & bẻ seed LCG/AEAD
-    │   └── SKILL.md
-    └── bytecode-and-vm-recovery/              # Skill đọc Marshal đa phiên bản, CodeType động & CFF
-        └── SKILL.md
+    └── novoid-decompiler-system/              # Skill AI hợp nhất toàn diện 3 giai đoạn
+        ├── SKILL.md
+        └── reference/
+            └── invariants.md                  # Bảng tra magic bytes, hằng số PRNG/hash, CPython ABI
 ```
 
 ---
 
-## 🎯 Danh mục Quy tắc & Skills
+## 🎯 Danh mục Quy tắc & Skill
 
 ### Hệ thống Rules (`rules/`)
 
@@ -68,13 +62,11 @@ novoid-decompiler-system/
 | `rules/mindset.md` | 6 trụ cột tư duy dịch ngược | Ngăn Agent đọc chay mã rối; ép lần theo Chokepoint và điểm yếu toán học |
 | `rules/safety-and-boundaries.md` | Ranh giới an toàn & Kiểm chứng | Ngăn chạy nhầm bẫy anti-debug/malware; ép kiểm tra CRC32/AEAD và AST |
 
-### Hệ thống Skills (`skills/`)
+### Hệ thống Skill (`skills/`)
 
 | Skill ID | Nhiệm vụ chuyên biệt | Khi nào tự kích hoạt |
 | :--- | :--- | :--- |
-| `systematic-reverse-engineering` | Điều phối quy trình 6 bước từ phân tích lớp vỏ tới tái tạo logic | Gặp obfuscator lạ nhiều tầng, Custom VM hoặc bẫy chống dịch tĩnh |
-| `static-unpacking-pipeline` | Trích hằng số bằng AST, phá LCG bằng C (`gcc -O3`), giải AEAD/HKDF | Gặp loader mã hóa nhiều lớp (`a85`/`b85`, XOR, LCG, C-stub nhúng) |
-| `bytecode-and-vm-recovery` | Viết `MarshalParser`, mô phỏng `CodeType` builder, gỡ CFF & bẫy `0/0` | Gặp bytecode khác phiên bản (`3.11–3.14`), tag pool ngẫu nhiên, CFF |
+| `novoid-decompiler-system` | **Hợp nhất 3 giai đoạn toàn diện:**<br/>• Giai đoạn 1: Phương pháp luận & Chokepoint<br/>• Giai đoạn 2: Bóc tách tĩnh & bẻ LCG C (`gcc -O3`)<br/>• Giai đoạn 3: Phục hồi Bytecode, Layout Emulation & CFF | Gặp obfuscator lạ nhiều tầng, Custom VM, bẫy anti-debug/anti-static, hoặc bytecode lỗi dis/pycdc |
 
 ---
 

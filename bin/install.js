@@ -79,6 +79,19 @@ try {
     .filter(d => d.isDirectory())
     .map(d => d.name);
 
+  const obsoleteSkills = [
+    'systematic-reverse-engineering',
+    'static-unpacking-pipeline',
+    'bytecode-and-vm-recovery',
+  ];
+  for (const obs of obsoleteSkills) {
+    const obsPath = path.join(targetSkillsDir, obs);
+    if (fs.existsSync(obsPath)) {
+      fs.rmSync(obsPath, { recursive: true, force: true });
+      console.log(`  [-] Cleaned up obsolete separate skill: ${obs}`);
+    }
+  }
+
   for (const skillName of skillDirs) {
     const src = path.join(srcSkillsDir, skillName);
     const dest = path.join(targetSkillsDir, skillName);

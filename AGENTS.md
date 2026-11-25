@@ -19,6 +19,4 @@ This repository provides **rules, reverse-engineering mindset, and modular AI Ag
 
 | Skill ID | Purpose | Trigger Condition |
 | :--- | :--- | :--- |
-| `systematic-reverse-engineering` | End-to-end 6-step loop for white-box obfuscators and custom VMs | Unknown multi-layer obfuscator, anti-debug/anti-static trap, or custom VM |
-| `static-unpacking-pipeline` | Layer-by-layer static extraction & truncated-seed crypto cracking | Multi-stage encrypted loaders (`a85`/`b85`, LCG, HKDF, AEAD, embedded C) |
-| `bytecode-and-vm-recovery` | Cross-version bytecode parsing, layout emulation, and CFF recovery | Cross-version `marshal`, dynamic `CodeType` builders, opaque predicates, CFF |
+| `novoid-decompiler-system` | Unified systematic methodology (Methodology & Chokepoints → Static Layer Unpacking & LCG Cracking → Bytecode, Layout Emulation & CFF Deobfuscation) | Unknown multi-layer obfuscator, custom VM, packed loader, or when standard dis/pycdc fails |
